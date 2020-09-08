@@ -81,7 +81,7 @@
 
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Grafico de Barras Circulares >> Tarea III << </h1>
+        <h1 class="h2">Dashboard en Power BI >> Tarea V << </h1>
         <div class="btn-toolbar mb-2 mb-md-0">
           <div class="btn-group mr-2">
             <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
@@ -92,81 +92,13 @@
       </div>
       <div class="cell code_cell rendered selected">
       <div class="my-4 w-100">
-      <svg id="one" width="760" height="760" font-family="sans-serif" font-size="10" text-anchor="middle"></svg>
+      <iframe width="1140" height="541.25" src="https://app.powerbi.com/reportEmbed?reportId=fca8e3ba-abd7-439e-891f-f79ef93b65bd&autoAuth=true&ctid=899789dc-202f-44b4-8472-a6d40f9eb440&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLWV1cm9wZS1ub3J0aC1iLXJlZGlyZWN0LmFuYWx5c2lzLndpbmRvd3MubmV0LyJ9" frameborder="0" allowFullScreen="true"></iframe>
       </div>
       </div>
  
-<script>
-
-
-var svg =d3.select("#one"),
-width =+svg.attr("width"),
-height =+svg.attr("height"),
-format = d3.format(",d"),
-color = d3.scaleOrdinal(d3.schemeCategory20c);
-//console.log(color);
-var pack=d3.pack().size([width,height]).padding(1.5);
-d3.csv("covid19.csv",function(t){
-    if(t.value=+t.value,t.value)return t},
-    function(t,e){if(t)throw t;
-    var n=d3.hierarchy({children:e}).sum(function(t){return t.value})
-    .each(function(t){if(e=t.data.id){
-        var e,n=e.lastIndexOf(".");
-        t.id=e,t.package=e.slice(0,n),
-        t.class=e.slice(n+1)}}),
-    a=(d3.select("body").append("div")
-        .style("position","absolute")
-        .style("z-index","10")
-        .style("visibility","hidden")
-        .text("a"),svg.selectAll(".node")
-        .data(pack(n).leaves())
-        .enter().append("g")
-        .attr("class","node")
-        .attr("transform",function(t){return"translate("+t.x+","+t.y+")"}));
-    a.append("circle").attr("id",function(t){return t.id})
-        .attr("r",function(t){return t.r})
-        .style("fill",function(t){return color(t.package)})
-        ,a.append("clipPath")
-        .attr("id",function(t){return"clip-"+t.id})
-        .append("use")
-        .attr("xlink:href",function(t){return"#"+t.id})
-        .attr("id","circle"),
-    a.append("svg:title")
-        .text(function(t){return t.value}),
-    a.append("text")
-        .attr("clip-path",
-        function(t){return"url(#clip-"+t.id+")"})
-        .selectAll("tspan")
-        .data(function(t){return t.class.split(/(?=[A-Z][^A-Z])/g)})
-        .enter()
-        .append("tspan")
-        .attr("x",0)
-        .attr("y",function(t,e,n){return 13+10*(e-n.length/2-.5)})
-        .text(function(t){return t})
-    });
-    d3.selectAll('circle').classed('circulo', true);
-
-</script>
-
 
       
-      <h3>Grafica de burbuja  <br/>Principales estados de México, con casos de covid confirmados</h3><br/>
-      <div class="table-responsive">
-        <table class="table table-striped table-sm">
-          <thead>
-            <tr>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Se realiza un gráfico de burbujas dimencionar los casos de covid-19 en mexico, 
-                el tamaño de cada burbuja representa el número de <strong>casos confirmados 
-                </strong> por estados del país.</td>
 
-            </tr>
-          </tbody>
-        </table>
-      </div>
     </main>
   </div>
 </div>
